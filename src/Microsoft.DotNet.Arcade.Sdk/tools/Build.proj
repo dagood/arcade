@@ -85,7 +85,7 @@
         The tools are not needed and not all of them are actually available.
       -->
       <_RestoreTools>false</_RestoreTools>
-      <_RestoreTools Condition="'$(Restore)' == 'true' and '$(DotNetBuildFromSource)' != 'true'">true</_RestoreTools>
+      <_RestoreTools Condition="'$(Restore)' == 'true'">true</_RestoreTools>
     </PropertyGroup>
 
     <ItemGroup>
