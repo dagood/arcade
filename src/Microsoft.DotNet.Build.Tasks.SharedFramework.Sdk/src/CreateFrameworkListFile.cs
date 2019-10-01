@@ -54,7 +54,7 @@ namespace Microsoft.DotNet.Build.Tasks.SharedFramework.Sdk
         /// </summary>
         public ITaskItem[] RootAttributes { get; set; }
 
-        public override bool ExecuteCore()
+        public override bool Execute()
         {
             XAttribute[] rootAttributes = RootAttributes
                 ?.Select(item => new XAttribute(item.ItemSpec, item.GetMetadata("Value")))

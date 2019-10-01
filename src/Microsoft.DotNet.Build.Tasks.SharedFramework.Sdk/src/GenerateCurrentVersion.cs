@@ -48,7 +48,7 @@ namespace Microsoft.DotNet.Build.Tasks.SharedFramework.Sdk
         private const string LastModifiedTimeDateFormat = "yyyy-MM-dd HH:mm:ss.FFFFFFF";
         private CultureInfo enUS = new CultureInfo("en-US");
 
-        public override bool ExecuteCore()
+        public override bool Execute()
         {
             // If OfficialBuildId is passed in, then use that to calculate the version and revision.
             if (string.IsNullOrEmpty(OfficialBuildId))

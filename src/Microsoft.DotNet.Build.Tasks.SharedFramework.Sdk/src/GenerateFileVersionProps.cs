@@ -42,7 +42,7 @@ namespace Microsoft.DotNet.Build.Tasks.SharedFramework.Sdk
         /// </summary>
         public bool PermitDllAndExeFilesLackingFileVersion { get; set; }
 
-        public override bool ExecuteCore()
+        public override bool Execute()
         {
             var fileVersions = new Dictionary<string, FileVersionData>(StringComparer.OrdinalIgnoreCase);
             foreach(var file in Files)

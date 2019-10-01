@@ -18,7 +18,7 @@ namespace Microsoft.DotNet.Build.Tasks.SharedFramework.Sdk
         [Output]
         public string RuntimeIdentifier { get; set; }
 
-        public override bool ExecuteCore()
+        public override bool Execute()
         {
             switch (RuntimeInformation.OSArchitecture)
             {

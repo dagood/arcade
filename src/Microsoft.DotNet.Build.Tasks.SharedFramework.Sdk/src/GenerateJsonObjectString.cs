@@ -34,7 +34,7 @@ namespace Microsoft.DotNet.Build.Tasks.SharedFramework.Sdk
         [Output]
         public string Json { get; set; }
 
-        public override bool ExecuteCore()
+        public override bool Execute()
         {
             var result = new StringBuilder();
             result.AppendLine("{");

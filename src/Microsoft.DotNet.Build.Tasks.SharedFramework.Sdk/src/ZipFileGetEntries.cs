@@ -25,7 +25,7 @@ namespace Microsoft.DotNet.Build.Tasks.SharedFramework.Sdk
         [Output]
         public ITaskItem[] Entries { get; set; }
 
-        public override bool ExecuteCore()
+        public override bool Execute()
         {
             try
             {

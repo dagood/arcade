@@ -34,7 +34,7 @@ namespace Microsoft.DotNet.Build.Tasks.SharedFramework.Sdk
         /// </summary>
         public ITaskItem[] Include { get; set; }
 
-        public override bool ExecuteCore()
+        public override bool Execute()
         {
             try
             {

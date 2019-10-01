@@ -48,7 +48,7 @@ namespace Microsoft.DotNet.Build.Tasks.SharedFramework.Sdk
         [Required]
         public ITaskItem[] FileElementToStabilize { get; set; }
 
-        public override bool ExecuteCore()
+        public override bool Execute()
         {
             XDocument content = XDocument.Load(SourceFile);
 

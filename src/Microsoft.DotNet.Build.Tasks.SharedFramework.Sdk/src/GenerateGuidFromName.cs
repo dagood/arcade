@@ -17,7 +17,7 @@ namespace Microsoft.DotNet.Build.Tasks.SharedFramework.Sdk
         public string GeneratedGuid { get; set; }
 
         // Generate a Version 5 (SHA1 Name Based) Guid from a name.
-        public override bool ExecuteCore()
+        public override bool Execute()
         {
             // Any fixed GUID will do for a namespace.
             Guid namespaceId = new Guid("28F1468D-672B-489A-8E0C-7C5B3030630C");

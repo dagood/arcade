@@ -40,7 +40,7 @@ namespace Microsoft.DotNet.Build.Tasks.SharedFramework.Sdk
         [Output]
         public string MsiVersion { get; set; }
 
-        public override bool ExecuteCore()
+        public override bool Execute()
         {
             if(BuildNumber == null && BuildNumberMajor == null)
             {

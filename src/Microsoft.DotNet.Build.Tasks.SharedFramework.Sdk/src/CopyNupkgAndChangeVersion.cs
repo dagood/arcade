@@ -29,7 +29,7 @@ namespace Microsoft.DotNet.Build.Tasks.SharedFramework.Sdk
 
         public string[] DependencyPackageIdsToChange { get; set; }
 
-        public override bool ExecuteCore()
+        public override bool Execute()
         {
             Directory.CreateDirectory(Path.GetDirectoryName(TargetFile));
             File.Copy(SourceFile, TargetFile, true);

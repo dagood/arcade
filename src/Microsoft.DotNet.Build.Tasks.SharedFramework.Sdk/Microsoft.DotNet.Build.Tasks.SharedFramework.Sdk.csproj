@@ -14,8 +14,6 @@
     <EnableDefaultNoneItems>false</EnableDefaultNoneItems>
     <EnableGeneratedPackageContent>false</EnableGeneratedPackageContent>
     <NoWarn>$(NoWarn);3021;NU5105</NoWarn>
-
-    <DefaultItemExcludes Condition="'$(TargetFramework)' != 'net472'">**/*.Desktop.*</DefaultItemExcludes>
   </PropertyGroup>
 
   <ItemGroup>
@@ -37,7 +35,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="..\Common\AssemblyResolution.cs" Link="src\AssemblyResolution.cs" />
+    <Compile Include="..\Common\BuildTask.cs" />
+  </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+    <Compile Include="..\Common\AssemblyResolver.cs" />
+    <Compile Include="..\Common\BuildTask.Desktop.cs" />
   </ItemGroup>
 
   <Import Project="$(RepoRoot)eng\BuildTask.targets" />

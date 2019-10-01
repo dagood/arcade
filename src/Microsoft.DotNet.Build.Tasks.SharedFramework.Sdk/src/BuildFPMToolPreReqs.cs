@@ -31,7 +31,7 @@ namespace Microsoft.DotNet.Build.Tasks.SharedFramework.Sdk
         [Output]
         public string FPMParameters { get; set; }
 
-        public override bool ExecuteCore()
+        public override bool Execute()
         {
             try
             {

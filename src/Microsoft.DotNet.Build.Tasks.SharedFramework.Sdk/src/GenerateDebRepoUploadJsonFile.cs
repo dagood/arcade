@@ -21,7 +21,7 @@ namespace Microsoft.DotNet.Build.Tasks.SharedFramework.Sdk
         [Required]
         public string UploadUrl { get; set; }
 
-        public override bool ExecuteCore()
+        public override bool Execute()
         {
             File.Delete(UploadJsonFilename);
 

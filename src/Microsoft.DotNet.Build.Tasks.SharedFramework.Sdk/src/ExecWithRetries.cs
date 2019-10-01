@@ -60,7 +60,7 @@ namespace Microsoft.DotNet.Build.Tasks.SharedFramework.Sdk
             _cancelTokenSource.Cancel();
         }
 
-        public override bool ExecuteCore()
+        public override bool Execute()
         {
             for (int i = 0; i < MaxAttempts; i++)
             {
