@@ -280,4 +280,6 @@
                     Condition="$(PublishToSymbolServer)"/>
   </Target>
 
+  <Import Project="SourceBuild/SourceBuildArcadePublish.targets" Condition="'$(ArcadeBuildFromSource)' == 'true'" />
+
 </Project>
