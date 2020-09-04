@@ -86,6 +86,7 @@
     <VSWhereVersion Condition="'$(VSWhereVersion)' == ''">2.6.7</VSWhereVersion>
     <SNVersion Condition="'$(SNVersion)' == ''">1.0.0</SNVersion>
     <MicrosoftDotNetBuildTasksVisualStudioVersion Condition="'$(MicrosoftDotNetBuildTasksVisualStudioVersion)' == ''">$(ArcadeSdkVersion)</MicrosoftDotNetBuildTasksVisualStudioVersion>
+    <MicrosoftDotNetSourceBuildTasksVersion Condition="'$(MicrosoftDotNetSourceBuildTasksVersion)' == ''">$(ArcadeSdkVersion)</MicrosoftDotNetSourceBuildTasksVersion>
   </PropertyGroup>
 
   <!-- RestoreSources overrides - defines DotNetRestoreSources variable if available -->
