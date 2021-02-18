@@ -307,7 +307,7 @@ function InitializeBuildTool {
   # return values
   _InitializeBuildTool="$_InitializeDotNetCli/dotnet"
   _InitializeBuildToolCommand="msbuild"
-  _InitializeBuildToolFramework="netcoreapp3.1"
+  _InitializeBuildToolFramework="netcoreapp2.1"
 }
 
 # Set RestoreNoCache as a workaround for https://github.com/NuGet/Home/issues/3116
@@ -414,24 +414,11 @@ function MSBuild {
     fi
 
     local toolset_dir="${_InitializeToolset%/*}"
-    # new scripts need to work with old packages, so we need to look for the old names/versions
-    local selectedPath=
-    local possiblePaths=()
-    possiblePaths+=( "$toolset_dir/$_InitializeBuildToolFramework/Microsoft.DotNet.ArcadeLogging.dll" )
-    possiblePaths+=( "$toolset_dir/$_InitializeBuildToolFramework/Microsoft.DotNet.Arcade.Sdk.dll" )
-    possiblePaths+=( "$toolset_dir/netcoreapp2.1/Microsoft.DotNet.ArcadeLogging.dll" )
-    possiblePaths+=( "$toolset_dir/netcoreapp2.1/Microsoft.DotNet.Arcade.Sdk.dll" )
-    for path in "${possiblePaths[@]}"; do
-      if [[ -f $path ]]; then
-        selectedPath=$path
-        break
-      fi
-    done
-    if [[ -z "$selectedPath" ]]; then
-      Write-PipelineTelemetryError -category 'Build'  "Unable to find arcade sdk logger assembly."
-      ExitWithExitCode 1
+    local logger_path="$toolset_dir/$_InitializeBuildToolFramework/Microsoft.DotNet.ArcadeLogging.dll"
+    if [[ ! -f $logger_path ]]; then
+      logger_path="$toolset_dir/$_InitializeBuildToolFramework/Microsoft.DotNet.Arcade.Sdk.dll"
     fi
-    args+=( "-logger:$selectedPath" )
+    args=( "${args[@]}" "-logger:$logger_path" )
   fi
 
   MSBuild-Core ${args[@]}
